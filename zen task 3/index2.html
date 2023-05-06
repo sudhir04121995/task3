@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>task 4</title>
+    </head>
+    <body>
+        <script>
+            function handleData(){
+                let data= JSON.parse (this.responseText)
+
+                for(let i=0;i<data.length;i++)
+                {
+                  console.log(data[i].name,data[i].altSpellings,data[i].subregion,data[i].region,data[i].population)
+                }
+            }
+
+            const req =new XMLHttpRequest();
+            req.addEventListener('load',handleData)
+            req.open("GET","https://restcountries.com/v2/all")
+            req.send()
+
+        </script>
+    </body>
+</html>
